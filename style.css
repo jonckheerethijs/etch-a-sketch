@@ -12,23 +12,21 @@ body {
 }
 
 .grid-container {
-    height: 80vh;
+    height: 90vh;
     width: 95vw;
-    border: 1px dashed purple;
     display: flex;
     justify-content: space-evenly;
 }
 
 .column {
     flex: 1;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
 }
 
 .cell {
     flex: 1;
-    border: 1px solid blue;
+    border: 1px dotted gray;
 
 }
 

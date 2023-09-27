@@ -39,12 +39,14 @@ function removeGrid() {
     toRemove.forEach(key => key.remove())
 }
 
-function checkInput(input){
-    if (input>100){
-        alert (`${input} is larger than 100`)
+function checkInput(input) {
+    if (input > 100) {
+        alert(`${input} is larger than 100`)
         return true
-    } else if (isNaN(input)){
-        console.log(isNaN(input))
+    } else if (input < 0) {
+        alert(`${input} is negative`)
+        return true
+    } else if (isNaN(input)) {
         alert(`${input} is not a number`)
         return true
     } else {
@@ -55,14 +57,14 @@ function checkInput(input){
 function buttonPress() {
     removeGrid()
     let x = prompt("How many columns do you want? (Max 100)", 10)
-    while (checkInput(x)){
+    while (checkInput(x)) {
         x = prompt("How many columns do you want? (Max 100)", 10)
         checkInput(x)
     }
     const y = prompt("How many rows do you want? (Max 100)", 10)
-    while (checkInput(y)){
+    while (checkInput(y)) {
         y = prompt("How many columns do you want? (Max 100)", 10)
-        checkInput(y))
+        checkInput(y)
     }
     createGrid(x, y)
     const cells = Array.from(document.querySelectorAll('.cell'))
